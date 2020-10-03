@@ -1,0 +1,43 @@
+body {
+  padding: 40px;
+   background-color: #085730;
+   font-family: Arial;
+}
+
+h1, h2 {
+  color: #ffffff;
+  background: linear-gradient(25deg, #9b9b9bb2, #1aaa62);
+  border: 1px solid;
+  box-shadow: 5px 5px #201f1fad;
+  padding: 5px;
+  text-align: center;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  padding: 5px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 1.5em;
+  background: linear-gradient(25deg, #9b9b9bb2, #1aaa62);
+  border: 3px solid;
+  box-shadow: 5px 5px #201f1fad;
+}
+
+#expSelection {
+  margin-top: 5px;
+  display: none;
+}
+
+#saveButton {
+  margin: 2px;
+  right: 20px;
+  bottom: 20px;
+  font-size: large;
+  box-shadow: 2px 2px #7c3333ad;
+  border-radius: 5px;
+  background-color: #0a7575;
+  color: rgb(252, 252, 252);
+}

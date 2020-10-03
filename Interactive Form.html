@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <title>Interactive Form Demo</title>
+  </head>
+<body>
+  <div>
+    <h1>Your Adventure Starts Now!</h1>
+    <h2>Make an account.</h2>
+    <div class='container'>
+      <h3>About you</h3>
+      <form id='saveForm'>
+        What's your name?<br><input type='text'><br>
+        How old are you?<br><input type='text'><br>
+        Where are you from?<br><input type='text'><br>
+        <br>
+        Have you studied English?<br>
+        <input  type='radio' class="check" id='engExpY' name='engEx'value='yes'>
+        <label for='Yes'>Yes</label>
+        <input  type='radio' class="check" id='engExpN' name='engEx'value='no'>
+        <label for='No'>No</label><br>
+      <div id='expSelection'>
+        How long?<br><select>
+          <option value='3 or less months'>Less than 3 months</option>
+          <option value='3-6 months'>3-6 months</option>
+          <option value='6+ months'>6+ months</option>
+          <option value='1 or more yrs'>1 year or more</option>
+        </select>
+      </div>   	
+      <br><input id='saveButton' type='submit' value='Save & Next'>
+    </form>
+    </div>
+  </div>
+<script>
+let checkboxY = document.getElementById('engExpY');
+let checkboxN = document.getElementById('engExpN');
+let selectionDiv = document.getElementById('expSelection');
+
+checkboxY.addEventListener('change', function(event){
+  if (checkboxY.checked == true) {
+    selectionDiv.style.display = 'Block';
+  } else {
+    selectionDiv.style.display = 'None';
+  }
+});
+
+checkboxN.addEventListener('change', function(event){
+    selectionDiv.style.display = 'None';
+});
+
+
+let saveForm = document.getElementById('saveForm');
+//even is triggered on yes / button... 
+saveForm.addEventListener('submit', function(event){
+  event.preventDefault();
+  let nameText = saveForm.elements[0].value;
+  let ageText = saveForm.elements[1].value;
+  let fromText = saveForm.elements[2].value;
+  let doesHaveExp = saveForm.elements[3].checked;
+  let noExp =  saveForm.elements[4].checked;
+  let expText = 'No Experience'; 
+  if (nameText == '') {
+  alert("What's your name?");
+  return;
+  }
+  if (ageText == '') {
+     alert("How old are you?");
+     return;
+  }
+  if (fromText == ''){ 
+  alert("Where are you from?")
+  return;
+ }
+  if (!doesHaveExp && !noExp) {
+    alert("Do you have any experince studying English?")
+  return;
+  }
+  if (doesHaveExp) 
+  {
+    expText = saveForm.elements[5].value; 
+  }
+alert('Personal Information Saved!\n' +
+  nameText + '\n' + 
+  ageText + '\n' + 
+  fromText + '\n' + 
+  expText
+  );
+
+});
+
+</script>    
+</body>
+</html>
