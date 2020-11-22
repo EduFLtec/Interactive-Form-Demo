@@ -33,63 +33,7 @@
     </form>
     </div>
   </div>
-<script>
-let checkboxY = document.getElementById('engExpY');
-let checkboxN = document.getElementById('engExpN');
-let selectionDiv = document.getElementById('expSelection');
 
-checkboxY.addEventListener('change', function(event){
-  if (checkboxY.checked == true) {
-    selectionDiv.style.display = 'Block';
-  } else {
-    selectionDiv.style.display = 'None';
-  }
-});
-
-checkboxN.addEventListener('change', function(event){
-    selectionDiv.style.display = 'None';
-});
-
-
-let saveForm = document.getElementById('saveForm');
-//even is triggered on yes / button... 
-saveForm.addEventListener('submit', function(event){
-  event.preventDefault();
-  let nameText = saveForm.elements[0].value;
-  let ageText = saveForm.elements[1].value;
-  let fromText = saveForm.elements[2].value;
-  let doesHaveExp = saveForm.elements[3].checked;
-  let noExp =  saveForm.elements[4].checked;
-  let expText = 'No Experience'; 
-  if (nameText == '') {
-  alert("What's your name?");
-  return;
-  }
-  if (ageText == '') {
-     alert("How old are you?");
-     return;
-  }
-  if (fromText == ''){ 
-  alert("Where are you from?")
-  return;
- }
-  if (!doesHaveExp && !noExp) {
-    alert("Do you have any experince studying English?")
-  return;
-  }
-  if (doesHaveExp) 
-  {
-    expText = saveForm.elements[5].value; 
-  }
-alert('Personal Information Saved!\n' +
-  nameText + '\n' + 
-  ageText + '\n' + 
-  fromText + '\n' + 
-  expText
-  );
-
-});
-
-</script>    
+<script src="form.js"></script>    
 </body>
 </html>
